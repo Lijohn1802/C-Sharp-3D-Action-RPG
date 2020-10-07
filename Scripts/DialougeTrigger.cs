@@ -12,14 +12,14 @@ public class DialougeTrigger : MonoBehaviour
         {
             Invoke("startdia",0.1f);
         }*/
-        //if(this.gameObject.tag=="2Dia")
-       // {
+        if(this.gameObject.tag=="2Dia")
+        {
             /*this.GetComponent<DialougeTrigger>().*/Invoke("startdia",0.1f);
-        //}
+        }
     }
     public void startdia()
     {
-        //Time.timeScale = 0f;
+        Time.timeScale = 0f;
         FindObjectOfType<DialougeManager>().StartDialouge(dialouge);
     }
     //public void TriggerDialouge()

@@ -139,16 +139,6 @@ public class AudioManager : MonoBehaviour
         }
         PlayerSound.Source.Play();
     }
-    public void StopPlayerSound(string NameOfAudio)
-    {
-        Sound PlayerSound = Array.Find(PlayerSounds, Sound => Sound.NameOfAudio == NameOfAudio);
-        if (PlayerSound == null)
-        {
-            Debug.LogWarning("PlayerSound: " + NameOfAudio + " not found!");
-            return;
-        }
-        PlayerSound.Source.Stop();
-    }
     #endregion////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     #region EnemySounds////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     //

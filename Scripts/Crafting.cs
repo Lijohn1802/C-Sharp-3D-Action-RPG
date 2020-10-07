@@ -4,7 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 public class Crafting : MonoBehaviour
 {
-    //public GameObject crosshair;
+    public GameObject craftingpanel;
+    public GameObject crosshair;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,14 +23,14 @@ public class Crafting : MonoBehaviour
 
     public void exitcrafting()
     {
-        //FindObjectOfType<AudioManager>().PlayPlayerSound("ButtonSoundClose");
+        FindObjectOfType<AudioManager>().PlayPlayerSound("ButtonSoundClose");
         Time.timeScale = 1f;
-        this.gameObject.SetActive(false);
-        //Cursor.visible = false;
-        //crosshair.gameObject.SetActive(true);
-        //CraftingPanelSetActive.craftpanel = false;
+        craftingpanel.SetActive(false);
+        Cursor.visible = false;
+        crosshair.gameObject.SetActive(true);
+        CraftingPanelSetActive.craftpanel = false;
     }
-/*
+
     public void craftbullets()
     { 
         if(Metalss.metal<5)
@@ -85,5 +86,5 @@ public Item ak47;
             Metalss.wood = Metalss.wood - 5;
             Instantiate(WoodWall, GameObject.FindGameObjectWithTag("Player").transform.position,Quaternion.Euler(GameObject.FindGameObjectWithTag("Player").transform.rotation.z,90,-90));
         }
-    }*/
+    }
 }

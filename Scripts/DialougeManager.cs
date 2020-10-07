@@ -13,16 +13,15 @@ public class DialougeManager : MonoBehaviour
     {
         sentences = new Queue<string>();
     }
-    private float timetillnext;
     private void Update() 
     {
-        //timetillnext -= Time.deltaTime;
         if(corunning==false && diagroup.activeInHierarchy&&Input.GetKeyDown(KeyCode.Space))
         {
             DisplayNextSentence();
             FindObjectOfType<AudioManager>().PlayPlayerSound("SpaceText");
             StartCoroutine(Waittrue());  
         }
+        
         if(corunning==true && diagroup.activeInHierarchy&&Input.GetKeyDown(KeyCode.Space))
         {
             StopAllCoroutines();
@@ -153,9 +152,10 @@ public class DialougeManager : MonoBehaviour
     }
 
     public static bool corunning = true;
+    public GameObject DialougeGroup;
     void EndDialouge()
     {
         Time.timeScale = 1f;
-        diagroup.SetActive(false);
+        DialougeGroup.SetActive(false);
     }
 }
